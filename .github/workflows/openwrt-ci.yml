@@ -12,7 +12,7 @@ name: OpenWrt-CI
 on:
   push:
     branches: 
-      master
+     - master
   #     ↑↑↑ 改成你的分支名, 一般是master
     schedule:
       - cron: 0 20 * * *
@@ -95,9 +95,9 @@ jobs:
           # 
           # 编译x64固件:
           cat >> .config <<EOF
-          CONFIG_TARGET_x86=y
-          CONFIG_TARGET_x86_64=y
-          CONFIG_TARGET_x86_64_Generic=y
+          CONFIG_TARGET_aarch64=y
+          CONFIG_TARGET_aarch64_cortex-a53=y
+          CONFIG_TARGET_BOARD="aarch64"
           EOF
           # 固件压缩:
           cat >> .config <<EOF
