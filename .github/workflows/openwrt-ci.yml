@@ -14,8 +14,8 @@ on:
     branches: 
      - master
   #     ↑↑↑ 改成你的分支名, 一般是master
-    schedule:
-      - cron: 0 20 * * *
+  # schedule:
+  #  - cron: 0 20 * * *
   # release:
   #   types: [published]
 
@@ -104,9 +104,9 @@ jobs:
           CONFIG_TARGET_IMAGES_GZIP=y
           EOF
           # 编译UEFI固件:
-          cat >> .config <<EOF
-          CONFIG_EFI_IMAGES=y
-          EOF
+          #cat >> .config <<EOF
+          #CONFIG_EFI_IMAGES=y
+          #EOF
           # IPv6支持:
           cat >> .config <<EOF
           CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
